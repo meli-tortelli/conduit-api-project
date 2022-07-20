@@ -1,6 +1,7 @@
 import { emailCodec } from "./email";
 import * as E from "fp-ts/Either";
 import { pipe } from "fp-ts/function";
+import { mapAll } from "@/config/tests/fixtures";
 
 it("Should validate the email correctly", () => {
   pipe(
