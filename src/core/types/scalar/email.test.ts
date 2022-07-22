@@ -15,9 +15,10 @@ it("Should return an error when email is invalid", () => {
     "invalid-email",
     emailCodec.decode,
     mapAllE((error) => {
-      if (Array.isArray(error)) {
-        expect(error[0]?.message).toBe("Invalid email.");
-      }
+      const errorMessage: string = Array.isArray(error)
+        ? error[0]?.message
+        : "";
+      expect(errorMessage).toBe("Invalid email");
     })
   );
 });

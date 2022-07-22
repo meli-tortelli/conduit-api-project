@@ -15,9 +15,10 @@ it("Should return an error when url is invalid", () => {
     "invalid-url",
     urlCodec.decode,
     mapAllE((error) => {
-      if (Array.isArray(error)) {
-        expect(error[0]?.message).toBe("Invalid URL");
-      }
+      const errorMessage: string = Array.isArray(error)
+        ? error[0]?.message
+        : "";
+      expect(errorMessage).toBe("Invalid URL");
     })
   );
 });

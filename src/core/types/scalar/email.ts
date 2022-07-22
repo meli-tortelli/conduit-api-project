@@ -11,7 +11,7 @@ export const emailCodec = withMessage(
     (value): value is t.Branded<string, EmailBrand> => isEmail(value),
     "Email"
   ),
-  () => "Invalid email."
+  () => "Invalid email"
 );
 
 export type Email = t.TypeOf<typeof emailCodec>;
