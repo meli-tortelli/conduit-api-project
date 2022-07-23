@@ -15,6 +15,8 @@ export const slugCodec = withMessage(
     "Invalid slug. Please, use alphanumeric characters, dashes and/or numbers."
 );
 
+export type Slug = t.TypeOf<typeof slugCodec>;
+
 function isSlug(value: string) {
   /*
     - must start with any letter
